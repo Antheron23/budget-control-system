@@ -34,7 +34,7 @@ To run this project, you will need to add the following environment variables to
 
 Follow these steps to get the project running locally.
 
-### 1. Clone the Repository
+###Clone the Repository
 ```bash
 git clone(https://github.com/Antheron23/budget-control-system.git)
 cd budget-control-system
