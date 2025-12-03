@@ -1,52 +1,98 @@
-# 💰 Budget Control System
+# 💰 Budget Control System (MERN Stack)
 
-A full-stack MERN expense tracking application that helps users manage their personal finances. It features secure user authentication, real-time expense tracking, and dynamic budget calculation with a modern, responsive UI.
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![MERN](https://img.shields.io/badge/MERN-Stack-green)
+![Status](https://img.shields.io/badge/Status-Completed-success)
 
-## 🚀 Features
+> A full-stack financial tracking application designed to help users monitor expenses, set budget limits, and maintain financial discipline through a secure and intuitive interface.
 
-* **User Authentication:** Secure Sign Up and Login using JWT (JSON Web Tokens) & bcrypt encryption.
-* **Expense Management:** Add, View, and Delete daily expenses.
-* **Budget Tracking:** Real-time calculation of total spending with visual alerts (Green/Red) when over budget.
-* **Responsive UI:** Professional design with a light yellow gradient theme and card-based layout.
-* **Data Persistence:** All data is stored securely in MongoDB.
+---
 
-## 🛠️ Tech Stack
+## 📸 Application Previews
 
-**Frontend:**
-* React.js (Hooks: useState, useEffect, useContext)
-* React Router (Navigation)
-* Axios (API Requests)
-* CSS3 (Custom Gradient & Card Design)
+### The Dashboard
+Real-time expense tracking with dynamic budget alerts.
+![Dashboard Screenshot](./screenshots/dashboard.png)
 
-**Backend:**
-* Node.js & Express.js (REST API)
-* MongoDB & Mongoose (Database & Schemas)
-* JWT & Bcryptjs (Authentication & Security)
+### Secure Authentication
+Professional login/signup with JWT security and form validation.
+![Login Screenshot](./screenshots/login.png)
 
-## ⚙️ Environment Variables
+---
 
-To run this project, you will need to add the following environment variables to your `.env` file in the `server` folder:
+## 🚀 Key Features
 
-`MONGO_URI` = Your MongoDB Connection String
-`JWT_SECRET` = Your Secret Key (e.g., mysecrettoken)
+### 🔐 Advanced Security
+* **JWT Authentication:** Stateless authentication using JSON Web Tokens.
+* **Password Encryption:** User passwords are hashed using `bcryptjs` before storage; raw passwords are never saved.
+* **Protected Routes:** Backend middleware ensures only authenticated users can access or modify data.
 
-## 📦 Installation & Setup
+### 💸 Smart Expense Management
+* **Real-Time Calculations:** The dashboard automatically calculates total expenditure.
+* **Budget Logic:** Visual indicators change from **Green (Safe)** to **Red (Danger)** when the user exceeds their defined budget limit (e.g., ₹5000).
+* **CRUD Operations:** Users can Create, Read, and Delete expenses instantly.
+* **Data Persistence:** All transactions are stored permanently in MongoDB Atlas.
 
-Follow these steps to get the project running locally.
+### 🎨 Modern UI/UX
+* **Responsive Design:** Works on desktop and mobile.
+* **Professional Styling:** Features a custom "Golden Gradient" theme (`#fffde7` to `#fff176`) for a premium financial app feel.
+* **Instant Feedback:** React state management provides immediate UI updates without page reloads.
 
-###Clone the Repository
+---
+
+## 🛠️ Tech Stack & Tools
+
+| Component | Technology | Description |
+| :--- | :--- | :--- |
+| **Frontend** | React.js | Functional Components, Hooks (`useState`, `useEffect`, `useContext`) |
+| **Routing** | React Router v6 | Client-side navigation |
+| **HTTP Client** | Axios | Handling API requests and Headers |
+| **Backend** | Node.js & Express | RESTful API architecture |
+| **Database** | MongoDB & Mongoose | NoSQL Schema-based data modeling |
+| **Auth** | JWT & Bcrypt | Security and Encryption |
+
+---
+
+## ⚙️ Local Installation Guide
+
+Follow these steps to set up the project locally on your machine.
+
+### Prerequisites
+* Node.js installed
+* MongoDB Atlas Account (or local MongoDB)
+
+### Clone the Repository
 ```bash
-git clone(https://github.com/Antheron23/budget-control-system.git)
+git clone [https://github.com/YOUR_USERNAME/budget-control-system.git](https://github.com/YOUR_USERNAME/budget-control-system.git)
 cd budget-control-system
+```
+Backend Setup
+```Bash
 
-2.Install Dependencies
-Server (Backend):Bash
 cd server
 npm install
-Client (Frontend):Bash
+```
+Create a .env file in the server folder with the following:
+
+Code snippet
+
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key_here
+PORT=5000
+Start the server:
+
+Bash
+```
+npm run dev
+```
+Frontend Setup
+Open a new terminal and navigate to the client folder:
+
+Bash
+```
 cd ../client
 npm install
-3. Run the ProjectStart the Backend:(Inside the server folder)Bashnpm run dev
-# Server runs on http://localhost:5000
-Start the Frontend:(Open a new terminal, go to client folder)Bashnpm start
-# Client runs on http://localhost:3000
+npm start
+```
+The application will launch automatically at http://localhost:3000.
+
