@@ -1,0 +1,83 @@
+/* 1. Global Reset & Gradient Background */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #fffde7 0%, #fff176 100%); /* Professional Light Yellow */
+  min-height: 100vh;
+  color: #333;
+}
+
+/* 2. The Centering Container (Holds the box in the middle) */
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Takes up full screen height */
+}
+
+/* 3. The White Card (Login/Register Box) */
+.auth-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Soft Shadow */
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.auth-card h1 {
+  margin-bottom: 0.5rem;
+  color: #f9a825; /* Darker Yellow/Orange for text */
+}
+
+.auth-card p {
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+/* 4. Input Fields */
+.auth-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box; /* Ensures padding doesn't break width */
+  font-size: 16px;
+  transition: border 0.3s;
+}
+
+.auth-input:focus {
+  border-color: #fbc02d;
+  outline: none;
+}
+
+/* 5. The Button */
+.auth-btn {
+  width: 100%;
+  padding: 12px;
+  background: #fbc02d; /* Nice Golden Yellow */
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s;
+}
+
+.auth-btn:hover {
+  background: #f9a825;
+}
+
+.auth-btn:active {
+  transform: scale(0.98);
+}
+
+/* 6. Links */
+a {
+  color: #f9a825;
+  text-decoration: none;
+  font-weight: bold;
+}

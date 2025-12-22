@@ -1,83 +1,105 @@
-/* 1. Global Reset & Gradient Background */
+:root {
+  --primary: #2563eb;       /* Modern Blue */
+  --primary-hover: #1d4ed8;
+  --danger: #ef4444;        /* Soft Red */
+  --bg: #f8fafc;            /* Light Grey Background */
+  --card: #ffffff;          /* White Cards */
+  --text-main: #1e293b;     /* Dark Blue-Grey Text */
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+}
+
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #fffde7 0%, #fff176 100%); /* Professional Light Yellow */
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Layout Container */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
   min-height: 100vh;
-  color: #333;
 }
 
-/* 2. The Centering Container (Holds the box in the middle) */
-.auth-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh; /* Takes up full screen height */
-}
+/* --- Global Component Styles --- */
 
-/* 3. The White Card (Login/Register Box) */
-.auth-card {
-  background: white;
-  padding: 2.5rem;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Soft Shadow */
-  width: 100%;
-  max-width: 400px;
-  text-align: center;
-}
-
-.auth-card h1 {
-  margin-bottom: 0.5rem;
-  color: #f9a825; /* Darker Yellow/Orange for text */
-}
-
-.auth-card p {
-  margin-bottom: 2rem;
-  color: #666;
-}
-
-/* 4. Input Fields */
-.auth-input {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-sizing: border-box; /* Ensures padding doesn't break width */
-  font-size: 16px;
-  transition: border 0.3s;
-}
-
-.auth-input:focus {
-  border-color: #fbc02d;
-  outline: none;
-}
-
-/* 5. The Button */
-.auth-btn {
-  width: 100%;
-  padding: 12px;
-  background: #fbc02d; /* Nice Golden Yellow */
-  color: #333;
+/* Buttons */
+button {
+  cursor: pointer;
   border: none;
   border-radius: 8px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.1s;
+  padding: 10px 20px;
+  font-weight: 600;
+  transition: all 0.2s;
 }
 
-.auth-btn:hover {
-  background: #f9a825;
+button[type="submit"], button.primary {
+  background-color: var(--primary);
+  color: white;
 }
 
-.auth-btn:active {
-  transform: scale(0.98);
+button[type="submit"]:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
 }
 
-/* 6. Links */
-a {
-  color: #f9a825;
-  text-decoration: none;
-  font-weight: bold;
+/* Inputs */
+input, select {
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input:focus, select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Cards (Login Form, Dashboard Sections) */
+.login-container, .dashboard-card {
+  background: var(--card);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  max-width: 400px;
+  margin: 10vh auto;
+}
+
+/* Dashboard List Items */
+li {
+  background: var(--card);
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid var(--border) !important; /* Override inline styles */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Login Form specific */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: var(--text-muted);
 }
